@@ -1,0 +1,29 @@
+.register-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+
+  & .form-send {
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+    color: $accent-4;
+  }
+}
+
+.register-element {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  & label {
+    margin-bottom: 0.5rem;
+  }
+
+  & .errors {
+    height: 1rem;
+    padding: 0.3rem 0;
+    font-size: 0.8rem;
+    color: $accent-2;
+  }
+}

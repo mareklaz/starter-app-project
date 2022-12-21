@@ -7,7 +7,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 // CSS & Bootstrap
 import * as bootstrap from 'bootstrap';
-import '../src/sass/styles.css';
+import * as Popper from '@popperjs/core';
+
+import '../src/sass/main.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <AuthContextProvider>

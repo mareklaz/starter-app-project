@@ -1,0 +1,142 @@
+.navbar {
+  font-family: $jatbrains-mono;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  background-color: $primary;
+  color: $light;
+  transition: width 200ms ease;
+  border-right: 0.5px solid $primary-light;
+  box-shadow: rgba(40, 40, 40, 0.4) 0px 2px 8px 0px;
+  &:hover .logo svg {
+    transform: rotate(-360deg);
+  }
+}
+
+.navbar-nav {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  background-color: $primary;
+  color: $light;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.nav-item {
+  width: 100%;
+
+  &:last-child {
+    margin-top: auto;
+  }
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: $light;
+  text-decoration: none;
+  height: 4rem;
+  transition: $transition-speed;
+
+  &:hover {
+    background-color: $primary-dark;
+    color: $light;
+  }
+  & svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.icon-primary {
+  color: $accent-1;
+  transition: $transition-speed;
+}
+.icon-secondary {
+  color: $accent-2;
+  transition: $transition-speed;
+  & .link-text {
+    color: $accent-2;
+  }
+}
+
+.logo {
+  font-weight: 300;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: $light;
+  background-color: $primary;
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+
+  & .link-text {
+    font-family: $jatbrains-mono;
+  }
+  & svg {
+    transform: rotate(0deg);
+    transition: transform $transition-speed;
+  }
+}
+
+svg {
+  width: 1.5rem;
+  margin: 0 1.125rem;
+}
+
+// Small Screens
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    border-right: none;
+    border-top: 0.5px solid $light;
+    width: 100%;
+    height: 5rem;
+    & svg {
+      padding: 0.1rem;
+      margin: 0;
+    }
+  }
+  .logo {
+    display: none;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-link {
+    justify-content: center;
+  }
+  .nav-item:last-child {
+    margin-top: 0;
+  }
+}
+
+// Large Screens
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    &:hover {
+      width: 16rem;
+      border-right: 0.5px solid $accent-1;
+    }
+    &:hover .link-text {
+      opacity: 1;
+      visibility: visible;
+      display: inline;
+      cursor: pointer;
+      transition: opacity $transition-speed;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.form-input {
+  width: 100%;
+  font-family: $jatbrains-mono;
+  font-size: 1rem;
+  font-weight: 300;
+  color: $light;
+  background-color: $primary-light;
+  padding: 1rem;
+  border: none;
+  border-radius: $border-radius;
+  transition: $transition-speed;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    background-color: $primary-dark;
+    color: $accent-1;
+    // border-radius: 0.5rem;
+    outline: none;
+  }
+
+  &:focus-within,
+  :focus-visible,
+  :target {
+    // padding: 1rem;
+    outline: none;
+    background-color: $accent-1;
+    color: $primary-dark;
+    &::placeholder {
+      color: $primary-dark;
+      opacity: 0.5;
+    }
+  }
+
+  &:active {
+    // padding: 1rem;
+  }
+
+  & option {
+    padding: 1rem 0;
+    margin: 1rem;
+  }
+}
+input::placeholder {
+  opacity: 0.5;
+  color: $light;
+}

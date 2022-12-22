@@ -1,47 +1,34 @@
 import React from 'react';
 import { RocketLaunchIcon, PresentationChartBarIcon, IdentificationIcon, Cog8ToothIcon, TrophyIcon } from '@heroicons/react/24/outline';
-
-const style1 = {
-  position: 'absolute',
-  inset: '0px auto auto 0px',
-  margin: '0px',
-  transform: 'translate3d(680px, 136.667px, 0px)',
-};
-
-const style2 = {
-  position: 'absolute',
-  top: '0px',
-  transform: 'translate3d(0px, 14.6667px, 0px)',
-};
-
+import { Link, NavLink } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <div className='d-flex flex-nowrap vh-100'>
       <div className='d-flex flex-column flex-shrink-0 bg-light' width={48}>
-        <a href='/' className='d-block p-3 link-dark text-decoration-none' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-original-title='Icon-only'>
-          <RocketLaunchIcon strokeWidth={1} className='text-dark' />
+        <Link to='/' className='d-block p-3 link-dark text-decoration-none border-bottom' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-original-title='Icon-only'>
+          <RocketLaunchIcon strokeWidth={1.5} className='text-dark' />
           <span className='visually-hidden'>Icon-only</span>
-        </a>
+        </Link>
         <ul className='nav nav-pills nav-flush flex-column mb-auto text-center'>
           <li className='nav-item'>
-            <a href='#' className='nav-link active py-3 border-bottom rounded-0' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Tooltip on right'>
-              <PresentationChartBarIcon strokeWidth={1} className='bi pe-none' width='32' height='32' role='img' aria-label='Dashboard' />
-            </a>
+            <NavLink to='/projects' className={({ isActive }) => (isActive ? 'active nav-link active py-3 border-bottom rounded-0' : 'nav-link py-3 border-bottom rounded-0')}>
+              <PresentationChartBarIcon strokeWidth={1.5} className='bi pe-none' width={32} height={32} />
+            </NavLink>
           </li>
           <li className='nav-item'>
-            <a href='#' className='nav-link py-3 border-bottom rounded-0' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Tooltip on right'>
-              <IdentificationIcon strokeWidth={1} className='bi pe-none' width='32' height='32' role='img' aria-label='Dashboard' />
-            </a>
+            <NavLink to='/profile' className={({ isActive }) => (isActive ? 'active nav-link active py-3 border-bottom rounded-0' : 'nav-link py-3 border-bottom rounded-0')}>
+              <IdentificationIcon strokeWidth={1.5} className='bi pe-none' width={32} height={32} />
+            </NavLink>
           </li>
           <li className='nav-item'>
-            <a href='#' className='nav-link py-3 border-bottom rounded-0' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Tooltip on right'>
-              <Cog8ToothIcon strokeWidth={1} className='bi pe-none' width='32' height='32' role='img' aria-label='Dashboard' />
-            </a>
+            <NavLink to='/settings' className={({ isActive }) => (isActive ? 'active nav-link active py-3 border-bottom rounded-0' : 'nav-link py-3 border-bottom rounded-0')}>
+              <Cog8ToothIcon strokeWidth={1.5} className='bi pe-none' width={32} height={32} />
+            </NavLink>
           </li>
           <li className='nav-item'>
-            <a href='#' className='nav-link py-3 border-bottom rounded-0' data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Tooltip on right'>
-              <TrophyIcon strokeWidth={1} className='bi pe-none' width='32' height='32' role='img' aria-label='Dashboard' />
-            </a>
+            <NavLink to='/goals' className={({ isActive }) => (isActive ? 'active nav-link active py-3 border-bottom rounded-0' : 'nav-link py-3 border-bottom rounded-0')}>
+              <TrophyIcon strokeWidth={1.5} className='bi pe-none' width={32} height={32} />
+            </NavLink>
           </li>
         </ul>
         <div className='dropdown border-top'>

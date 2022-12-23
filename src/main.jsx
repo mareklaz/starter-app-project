@@ -10,13 +10,14 @@ import * as bootstrap from 'bootstrap';
 import * as Popper from '@popperjs/core';
 
 import '../src/sass/main.css';
+import { AuthContextProvider } from './context/AuthContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <AuthContextProvider>
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>
-  // </AuthContextProvider>
+  <AuthContextProvider>
+    <React.StrictMode>
+      <Router>
+        <App />
+      </Router>
+    </React.StrictMode>
+  </AuthContextProvider>
 );

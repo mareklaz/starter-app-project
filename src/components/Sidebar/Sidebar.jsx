@@ -37,24 +37,19 @@ const Sidebar = () => {
           </a>
           <ul className='dropdown-menu text-small shadow'>
             <li>
-              <a className='dropdown-item' href='#'>
-                New project...
-              </a>
+              <Link to='/register' className='dropdown-item' href='#'>
+                Registrar
+              </Link>
             </li>
             <li>
-              <a className='dropdown-item' href='#'>
-                Settings
-              </a>
+              <Link to='/login' className='dropdown-item' href='#'>
+                Login
+              </Link>
             </li>
             <li>
-              <a className='dropdown-item' href='#'>
-                Profile
-              </a>
-            </li>
-            <li>
-              <a className='dropdown-item' href='#'>
-                Sign out
-              </a>
+              <Link to='/logout' className='dropdown-item' href='#'>
+                Logout
+              </Link>
             </li>
           </ul>
         </div>

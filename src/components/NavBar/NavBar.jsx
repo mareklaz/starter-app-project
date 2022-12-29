@@ -42,9 +42,9 @@ const Navbar = () => {
               </a>
               <ul className='dropdown-menu text-small' aria-labelledby='dropdownUser1'>
                 <li>
-                  <a className='dropdown-item' href='#'>
+                  <NavLink to='/projects/create' className='dropdown-item' href='#'>
                     Crear proyecto
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
                   <a className='dropdown-item' href='#'>

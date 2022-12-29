@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Header = ({ children, subtitle }) => {
+const Header = ({ title, subtitle, className }) => {
   return (
-    <div className='header-container'>
-      <h1>{children}</h1>
-      <h2>{subtitle}</h2>
+    <div className={className}>
+      <h1 className='mb-3'>{title}</h1>
+      <span className='mb-3'>{subtitle}</span>
     </div>
   );
 };

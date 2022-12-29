@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/mixins';
+
+// Create your own map
+$custom-colors: (
+  'color-primary': #282c34,
+  'accent-1': #e8a12e,
+  'accent-2': #b35a5a,
+  'accent-3': #a15baf,
+  'accent-4': #5bc36c,
+  'accent-5': #3477c4,
+  'light': #414854,
+  'color-dark': #21252b,
+  'color-light': #e3e3e399,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);

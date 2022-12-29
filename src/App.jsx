@@ -1,20 +1,22 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar/Sidebar';
+import Navbar from './components/Navbar/Navbar';
+import Projects from './screens/project/Projects';
 import { Home, Login, Register } from './screens/_index';
 
 function App() {
   return (
-    <div className='d-flex flex-nowrap'>
-      <Sidebar />
+    <>
+      <Navbar />
       <div className='container'>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/register' element={<Register />}></Route>
+          <Route path='/projects' element={<Projects />}></Route>
         </Routes>
       </div>
-    </div>
+    </>
   );
 }
 

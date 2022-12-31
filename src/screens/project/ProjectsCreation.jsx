@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import { useForm } from 'react-hook-form';
+import { createProject } from '../../services/ProjectServices';
 
 const ProjectsCreation = () => {
   const {
@@ -12,7 +13,23 @@ const ProjectsCreation = () => {
   } = useForm();
 
   const onSubmit = (values) => {
-    console.log(values);
+    const formData = new FormData();
+
+    for (let value in values) {
+      formData.append(value, values[value]);
+    }
+    console.log(formData);
+    createProject(formData)
+      .then((project) => {
+        if (project) {
+          console.log('Proyecto creado:', project);
+        } else {
+          console.log('Error en la creación del proyecto: ', project);
+        }
+      })
+      .catch((error) => {
+        console.log('Error al crear proyecto:', error);
+      });
   };
 
   return (
@@ -20,7 +37,7 @@ const ProjectsCreation = () => {
       <Header title={'Crear proyecto'} subtitle={'Comparte tu proyecto con la comunidad'} className='project-image px-3 text-center py-5 my-3 text-white bg-color-primary rounded shadow-sm' />
       <form onSubmit={handleSubmit(onSubmit)} encType='multipart/form-data'>
         <div className='row'>
-          <div className='col-6'>
+          <div className='col-12 col-lg-6'>
             <div className='mb-3'>
               <label htmlFor='nameInput' className='form-label'>
                 Nombre del Proyecto
@@ -40,9 +57,9 @@ const ProjectsCreation = () => {
               <textarea className='form-control' {...register('description', { required: true })} id='descriptionInput' />
             </div>
 
-            {/* <div className='mb-3'>
+            <div className='mb-3'>
               <label htmlFor='fileUploadInput' className='form-label'>
-                Selecciona una imagen para tu avatar
+                Selecciona una imagen para la cabecera de tu proyecto
               </label>
               {!watch('image') || watch('image').length === 0 ? (
                 <>
@@ -61,15 +78,15 @@ const ProjectsCreation = () => {
                   </span>
                 </div>
               )}
-            </div> */}
+            </div>
           </div>
-          <div className='col-6'>
+          <div className='col-12 col-lg-6'>
             <div className='mb-3'>
               <label htmlFor='statusInput' className='form-label'>
                 Elige el estado de tu proyecto
               </label>
               <select className='form-select py-3' {...register('status', { required: true })}>
-                <option value='Iniciando'>Iniciando</option>
+                <option value='Iniciado'>Iniciado</option>
                 <option value='En progreso'>En progreso</option>
                 <option value='Pendiente'>Pendiente</option>
                 <option value='Finalizado'>Finalizado</option>

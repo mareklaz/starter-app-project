@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-import { loginUser } from '../../services/AuthServices';
 
-const Login = () => {
+const AuthRestorePassword = () => {
   const [passwordAlert, setPasswordAlert] = useState(null);
 
   const {
@@ -14,42 +13,19 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (values) => {
-    // const formData = new FormData();
-
-    // for (let value in values) {
-    //   formData.append(value, values[value]);
-    // }
-
-    // console.log(formData);
-    if (values.password != values.repeatePassword) {
-      console.log('Password no coincide');
-      setPasswordAlert('Las contraseñas no coinciden');
-    } else {
-      loginUser(values)
-        .then((user) => {
-          console.log('Has iniciado sesión correctamente', user);
-        })
-        .catch((error) => {
-          console.log('Error al iniciar sesión del usuario', error);
-        });
-    }
+    console.log(values);
+    setPasswordAlert('Hola');
   };
 
   return (
     <>
-      <Header title={'Login'} subtitle={'Introduce tus credenciales'} className='login-image px-3 text-center py-5 mb-3 text-white bg-color-primary rounded shadow-sm' />
-      <p className='my-5'>Bienvenido a Starter, si ya dispones de una cuenta, inicia sesión para crear nuevos proyectos o colaborar con los ya existentes.</p>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <Header title={'Nueva Contraseña'} subtitle={'Crea una nueva contraseña'} className='login-image px-3 text-center py-5 mb-3 text-white bg-color-primary rounded shadow-sm' />
+      <form onSubmit={handleSubmit(onSubmit)} className='my-5'>
         <div className='container'>
           <div className='row justify-content-center mb-3'>
             <div className='col-4'>
-              <div className='mb-3'>
-                <label htmlFor='emailInput' className='form-label'>
-                  Correo electrónico
-                </label>
-                <input type='email' {...register('email', { required: true })} className='form-control py-3' id='emailInput' placeholder='Escribe tu nombre de usuario.' />
-              </div>
               <div className='mb-3'>
                 <label htmlFor='passwordInput' className='form-label'>
                   Password
@@ -90,4 +66,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AuthRestorePassword;

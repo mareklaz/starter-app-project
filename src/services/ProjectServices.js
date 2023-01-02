@@ -6,3 +6,5 @@ export const createProject = (body) => {
   console.log(body);
   http.post('/projects', body).then((res) => res);
 };
+
+export const getAllProjects = () => http.get('/projects').then((res) => res);

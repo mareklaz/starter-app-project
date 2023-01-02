@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-// import { AuthContextProvider } from './context/AuthContext';
-
 // CSS & Bootstrap
 import * as bootstrap from 'bootstrap';
 import * as Popper from '@popperjs/core';

@@ -4,7 +4,7 @@ import { RocketLaunchIcon } from '@heroicons/react/24/outline';
 const Home = () => {
   return (
     <div className=''>
-      <div className='px-3 text-center py-5 my-3 text-white bg-color-primary rounded shadow-sm title-image'>
+      <div className='px-3 text-center py-5 mb-3 text-white bg-color-primary rounded shadow-sm title-image'>
         <h1 className='mb-3'>Bienvenido a Starter</h1>
         <span className='mb-3'>Descubre todos los proyectos con los que puedes colaborar</span>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { RocketLaunchIcon } from '@heroicons/react/24/outline';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -60,9 +60,32 @@ const Navbar = () => {
                   <hr className='dropdown-divider' />
                 </li>
                 <li>
-                  <a className='dropdown-item' href='#'>
+                  <NavLink to='/register' className='dropdown-item'>
+                    Register
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to='/login' className='dropdown-item'>
                     Login
-                  </a>
+                  </NavLink>
+                </li>
+                <li>
+                  <hr className='dropdown-divider' />
+                </li>
+                <li>
+                  <Link to='/auth' className='dropdown-item'>
+                    Nueva
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/auth/30' className='dropdown-item'>
+                    Restaurar
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/activate/20' className='dropdown-item'>
+                    Activar
+                  </Link>
                 </li>
               </ul>
             </div>

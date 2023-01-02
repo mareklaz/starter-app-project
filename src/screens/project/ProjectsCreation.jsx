@@ -36,7 +36,7 @@ const ProjectsCreation = () => {
     <div>
       <Header title={'Crear proyecto'} subtitle={'Comparte tu proyecto con la comunidad'} className='project-image px-3 text-center py-5 my-3 text-white bg-color-primary rounded shadow-sm' />
       <form onSubmit={handleSubmit(onSubmit)} encType='multipart/form-data'>
-        <div className='row'>
+        <div className='row justify-content-center'>
           <div className='col-12 col-lg-6'>
             <div className='mb-3'>
               <label htmlFor='nameInput' className='form-label'>
@@ -105,11 +105,13 @@ const ProjectsCreation = () => {
               <input type='date' {...register('endDate', { required: true })} className='form-control py-3' id='endDateInput' placeholder='Escribe tu nombre del proyecto' />
             </div>
           </div>
-        </div>
-        <div className='d-grid gap-2'>
-          <button type='submit' className='btn btn-color-primary py-3'>
-            Crear proyecto
-          </button>
+          <div className='col-4 my-3'>
+            <div className='d-grid gap-2'>
+              <button type='submit' className='btn btn-color-primary py-3'>
+                Crear proyecto
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

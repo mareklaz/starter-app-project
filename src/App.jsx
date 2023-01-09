@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className='container'>
+      <div className=''>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/login' element={<Login />}></Route>

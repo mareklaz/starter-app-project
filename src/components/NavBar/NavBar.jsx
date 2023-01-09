@@ -92,7 +92,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <header className='py-3 mb-4 border-bottom'>
+      <header className='py-3 border-bottom'>
         <div className='container d-flex flex-row justify-content-center'>
           <RocketLaunchIcon strokeWidth={1.5} className='text-dark me-3' width={32} />
           <a href='/' className='d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none'>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import Collaborators from './screens/collaborators/Collaborators';
+import TopProject from './screens/top/TopProject';
 import { Home, Login, Register, ProjectsCreation, ProjectsDetail, Projects, AuthNewPassword, AuthRestorePassword, AuthActiveAccount } from './screens/_index';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Route path='/projects' element={<Projects />}></Route>
           <Route path='/projects/create' element={<ProjectsCreation />}></Route>
           <Route path='/projects/:id' element={<ProjectsDetail />}></Route>
+          <Route path='/collaborators' element={<Collaborators />}></Route>
+          <Route path='/top' element={<TopProject />}></Route>
         </Routes>
       </div>
     </>

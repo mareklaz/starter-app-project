@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
 import { useForm } from 'react-hook-form';
+import SectionHeader from '../../components/Header/SectionHeader';
+import MainContainer from '../../components/MainContainer/MainContainer';
 import { createProject } from '../../services/ProjectServices';
 
 const ProjectsCreation = () => {
@@ -33,11 +34,14 @@ const ProjectsCreation = () => {
   };
 
   return (
-    <div>
-      <Header title={'Crear proyecto'} subtitle={'Comparte tu proyecto con la comunidad'} className='project-image px-3 text-center py-5 my-3 text-white bg-color-primary rounded shadow-sm' />
+    <MainContainer>
+      <SectionHeader className='project-image text-center py-5 my-3 text-white bg-color-primary rounded shadow-sm'>
+        <h1>Crear proyecto nuevo</h1>
+      </SectionHeader>
+
       <form onSubmit={handleSubmit(onSubmit)} encType='multipart/form-data'>
         <div className='row justify-content-center'>
-          <div className='col-12 col-lg-6'>
+          <div className='col-12 col-lg-4'>
             <div className='mb-3'>
               <label htmlFor='nameInput' className='form-label'>
                 Nombre del Proyecto
@@ -80,7 +84,7 @@ const ProjectsCreation = () => {
               )}
             </div>
           </div>
-          <div className='col-12 col-lg-6'>
+          <div className='col-12 col-lg-4'>
             <div className='mb-3'>
               <label htmlFor='statusInput' className='form-label'>
                 Elige el estado de tu proyecto
@@ -105,16 +109,16 @@ const ProjectsCreation = () => {
               <input type='date' {...register('endDate', { required: true })} className='form-control py-3' id='endDateInput' placeholder='Escribe tu nombre del proyecto' />
             </div>
           </div>
-          <div className='col-4 my-3'>
-            <div className='d-grid gap-2'>
-              <button type='submit' className='btn btn-color-primary py-3'>
+          <div className='col-12 my-3 '>
+            <div className='d-flex gap-2 justify-content-center'>
+              <button type='submit' className='btn btn-color-primary py-3 px-5'>
                 Crear proyecto
               </button>
             </div>
           </div>
         </div>
       </form>
-    </div>
+    </MainContainer>
   );
 };
 

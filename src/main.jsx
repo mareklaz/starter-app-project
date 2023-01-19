@@ -4,8 +4,9 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // CSS & Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as bootstrap from 'bootstrap';
-import * as Popper from '@popperjs/core';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import '../src/sass/main.css';
 import { AuthContextProvider } from './context/AuthContext';

@@ -1,10 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header/Header';
+import SectionHeader from '../../components/Header/SectionHeader';
 import { registerUser } from '../../services/AuthServices';
 
 const Register = () => {
+  const [error, setError] = useState(null);
+
   const {
     register,
     handleSubmit,
@@ -12,14 +15,13 @@ const Register = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (values) => {
+  const onSubmit = (data) => {
+    console.log('Raw VALUES', data);
     const formData = new FormData();
 
-    for (let value in values) {
-      formData.append(value, values[value]);
+    for (let value in data) {
+      formData.append(value, data[value]);
     }
-
-    console.log(formData);
 
     registerUser(formData)
       .then((user) => {
@@ -30,19 +32,42 @@ const Register = () => {
         }
       })
       .catch((error) => {
+        // setError(error.response.data.msg || { msg: error });
         console.log('Error al registrar el usuario', error);
       });
   };
 
   return (
-    <>
-      <Header title={'Registro'} subtitle={'Crea una nueva cuenta y únete a la comunidad'} className='login-image px-3 text-center py-5 mb-3 text-white bg-color-primary rounded shadow-sm' />
+    <div className='container'>
+      <SectionHeader className='login-image text-center py-5 my-3 text-white bg-color-primary rounded shadow-sm'>
+        <h1>Registro</h1>
+      </SectionHeader>
       <p className='my-5'>
         Bienvenido a Starter, a continuación, deberás rellenar el formulario para crear una cuenta. Los usuarios registrados podrán crear nuevos proyectos, así como unirse a otros proyectos como
         colaboradores para ayudar y apoyar a otros compañeros.
       </p>
-      <form onSubmit={handleSubmit(onSubmit)} encType='multipart/form-data'>
-        <div className='container'>
+      <div className='row justify-content-center'>
+        <div className='col-8 small'>
+          {error ? (
+            <div className='alert alert-warning alert-dismissible fade show' role='alert'>
+              <p className='p-0 m-0'>{error}</p>
+              <button
+                type='button'
+                className='btn-close'
+                data-bs-dismiss='alert'
+                aria-label='Close'
+                onClick={() => {
+                  setError(null);
+                }}
+              />
+            </div>
+          ) : (
+            ''
+          )}
+        </div>
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className=''>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-4'>
               <div className='mb-3'>
@@ -124,11 +149,11 @@ const Register = () => {
             ¿Tienes cuenta? <Link to='/login'>Hacer Login</Link>
           </p>
           <p>
-            <Link to='/register'>Olvide la contraseña</Link>
+            <Link to='/auth'>Olvide la contraseña</Link>
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

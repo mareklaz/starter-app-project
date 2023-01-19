@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header/Header';
+import SectionHeader from '../../components/Header/SectionHeader';
+import MainContainer from '../../components/MainContainer/MainContainer';
 import { loginUser } from '../../services/AuthServices';
 
 const Login = () => {
@@ -37,13 +38,16 @@ const Login = () => {
   };
 
   return (
-    <>
-      <Header title={'Login'} subtitle={'Introduce tus credenciales'} className='login-image px-3 text-center py-5 mb-3 text-white bg-color-primary rounded shadow-sm' />
+    <MainContainer>
+      <SectionHeader className='login-image text-center py-5 my-3 text-white bg-color-primary rounded shadow-sm'>
+        <h1>Login</h1>
+      </SectionHeader>
+
       <p className='my-5'>Bienvenido a Starter, si ya dispones de una cuenta, inicia sesión para crear nuevos proyectos o colaborar con los ya existentes.</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='container'>
           <div className='row justify-content-center mb-3'>
-            <div className='col-4'>
+            <div className='col-12 col-lg-4'>
               <div className='mb-3'>
                 <label htmlFor='emailInput' className='form-label'>
                   Correo electrónico
@@ -54,13 +58,13 @@ const Login = () => {
                 <label htmlFor='passwordInput' className='form-label'>
                   Password
                 </label>
-                <input type='password' {...register('password', { required: true })} className='form-control py-3' id='passwordInput' placeholder='Escribe tu nombre de usuario.' />
+                <input type='password' {...register('password', { required: true })} className='form-control py-3' id='passwordInput' placeholder='Escribe tu contraseña' />
               </div>
               <div className='mb-3'>
                 <label htmlFor='passwordInput2' className='form-label'>
                   Confirmar password
                 </label>
-                <input type='password' {...register('repeatePassword', { required: true })} className='form-control py-3' id='passwordInput2' placeholder='Escribe tu nombre de usuario.' />
+                <input type='password' {...register('repeatePassword', { required: true })} className='form-control py-3' id='passwordInput2' placeholder='Repite tu contraseña' />
               </div>
               {passwordAlert ? <p>Las contraseñas no coinciden</p> : ''}
               <div className='row justify-content-center'>
@@ -80,13 +84,13 @@ const Login = () => {
                 ¿No tienes cuenta? <Link to='/register'>Crear cuenta</Link>
               </p>
               <p>
-                <Link to='/register'>Olvide la contraseña</Link>
+                <Link to='/auth'>Olvide la contraseña</Link>
               </p>
             </div>
           </div>
         </div>
       </form>
-    </>
+    </MainContainer>
   );
 };
 

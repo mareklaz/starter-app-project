@@ -2,16 +2,18 @@ import React from 'react';
 import { RocketLaunchIcon } from '@heroicons/react/24/outline';
 import { Link, NavLink } from 'react-router-dom';
 
+import Logo from '../../assets/iconmonstr-rocket-19.svg';
+
 const Navbar = () => {
   return (
     <>
-      <nav className='p-3 border-bottom'>
+      <nav className='py-3 border-bottom'>
         <div className='container'>
           <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
             <ul className='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
               <li>
                 <NavLink to='/' className='nav-link px-2 link-secondary'>
-                  Acerca de...
+                  Starter
                 </NavLink>
               </li>
               <li>
@@ -20,14 +22,19 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <a href='#' className='nav-link px-2 link-dark'>
+                <NavLink to='/collaborators' className='nav-link px-2 link-dark'>
                   Colaboradores
-                </a>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/top' className='nav-link px-2 link-dark'>
+                  Top 10
+                </NavLink>
               </li>
             </ul>
 
             <form className='col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3'>
-              <input type='search' className='form-control' placeholder='Search...' aria-label='Search' />
+              <input type='search' className='form-control' placeholder='Buscar...' aria-label='Search' />
             </form>
 
             <div className='dropdown text-end'>
@@ -40,7 +47,7 @@ const Navbar = () => {
                   className='rounded-circle'
                 />
               </a>
-              <ul className='dropdown-menu text-small' aria-labelledby='dropdownUser1'>
+              <ul className='dropdown-menu dropdown-menu-end text-small' aria-labelledby='dropdownUser1'>
                 <li>
                   <NavLink to='/projects/create' className='dropdown-item' href='#'>
                     Crear proyecto
@@ -93,11 +100,17 @@ const Navbar = () => {
         </div>
       </nav>
       <header className='py-3 border-bottom'>
-        <div className='container d-flex flex-row justify-content-center'>
-          <RocketLaunchIcon strokeWidth={1.5} className='text-dark me-3' width={32} />
-          <a href='/' className='d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none'>
-            <span className='fs-4'>Starter</span>
-          </a>
+        <div className='container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between'>
+          <div className='d-flex align-items-center mb-3 m-lg-0 justify-content-center'>
+            <img src={Logo} alt='Starter Logo Image' width={36} className='me-2' />
+            <a href='/' className=' text-dark text-decoration-none'>
+              <span className='fs-4'>Starter</span>
+            </a>
+          </div>
+          <div className='d-flex justify-content-center align-items-center text-danger '>
+            <i className='bi bi-exclamation-circle'></i>
+            <span className='align-items-center ms-2'>Sitio web de ejemplo</span>
+          </div>
         </div>
       </header>
     </>

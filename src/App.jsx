@@ -1,30 +1,25 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import Collaborators from './screens/collaborators/Collaborators';
-import TopProject from './screens/top/TopProject';
-import { Home, Login, Register, ProjectsCreation, ProjectsDetail, Projects, AuthNewPassword, AuthRestorePassword, AuthActiveAccount } from './screens/_index';
+import Home from './screens/Home';
+import ProjectsList from './screens/Projects/ProjectList';
+import ProjectCreate from './screens/Projects/ProjectCreate';
+import UserProfile from './screens/Users/UserProfile';
+import Register from './screens/Register/Register';
+import Login from './screens/Login/Login';
+import AuthActivation from './screens/Auth/AuthActivation';
 
 function App() {
   return (
     <>
-      <Navbar />
-      <div className=''>
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/register' element={<Register />}></Route>
-          <Route path='/projects' element={<Projects />}></Route>
-          <Route path='/auth' element={<AuthNewPassword />}></Route>
-          <Route path='/auth/:token' element={<AuthRestorePassword />}></Route>
-          <Route path='/activate/:id' element={<AuthActiveAccount />}></Route>
-          <Route path='/projects' element={<Projects />}></Route>
-          <Route path='/projects/create' element={<ProjectsCreation />}></Route>
-          <Route path='/projects/:id' element={<ProjectsDetail />}></Route>
-          <Route path='/collaborators' element={<Collaborators />}></Route>
-          <Route path='/top' element={<TopProject />}></Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/register' element={<Register />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/proyectos' element={<ProjectsList />}></Route>
+        <Route path='/proyectos/crear' element={<ProjectCreate />}></Route>
+        <Route path='/usuarios/perfil' element={<UserProfile />}></Route>
+        <Route path='/activation/:id' element={<AuthActivation />}></Route>
+      </Routes>
     </>
   );
 }

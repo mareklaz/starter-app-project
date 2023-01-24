@@ -1,0 +1,45 @@
+.navbar-custom {
+  height: 80px;
+}
+
+.card-custom {
+  height: 120px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.card-project {
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: grayscale(30%);
+}
+
+.card-1 {
+  background-image: url('https://images.unsplash.com/photo-1618044619888-009e412ff12a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80');
+}
+.card-2 {
+  background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+}
+.card-3 {
+  background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
+}
+.card-4 {
+  background-image: url('https://images.unsplash.com/photo-1608306448197-e83633f1261c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+}
+
+.card-project:hover {
+  color: orange;
+  background-color: rebeccapurple;
+}
+
+.social-icon {
+  color: $color-light;
+  &:hover {
+    color: $color-primary;
+  }
+}

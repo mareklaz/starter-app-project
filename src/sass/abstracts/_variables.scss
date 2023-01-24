@@ -1,22 +1,33 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
-@import '../../../node_modules/bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/variables';
-@import '../../../node_modules/bootstrap/scss/mixins';
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
 
 // Create your own map
 $custom-colors: (
-  'color-primary': #282c34,
-  'color-secondary': #8992a4,
-  'color-light': #eeeff2,
-  'color-dark': #1d1f25,
-  'accent-1': #e5c07b,
-  'accent-2': #e06c75,
-  'accent-3': #c678dd,
-  'accent-4': #98c379,
-  'accent-5': #61afef,
+  "color-primary": #282c34,
+  "color-secondary": #8992a4,
+  "color-light": #eeeff2,
+  "color-dark": #1d1f25,
+  "accent-1": #f7d410,
+  "accent-2": #e06c75,
+  "accent-3": #c678dd,
+  "accent-4": #98c379,
+  "accent-5": #61afef,
 );
+
+$color-dark: #1d1f25;
+$color-primary: #282c34;
+$color-secondary: #8992a4;
+$color-light: #eeeff2;
+$color-dark: #1d1f25;
+$accent-1: #f7d410;
+$accent-2: #e06c75;
+$accent-3: #c678dd;
+$accent-4: #98c379;
+$accent-5: #61afef;
 
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $custom-colors);

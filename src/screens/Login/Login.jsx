@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 
 import { login as userLogin } from '../../services/AuthServices';
 import AuthContext from '../../context/AuthContext';
+import HomeContainer from '../../components/MainContainer/HomeContainer';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <MainContainer>
+    <HomeContainer>
       <div className='row g-3 p-3 vh-100 d-flex flex-column flex-lg-row align-items-center justify-content-center'>
         <div className='col-12 col-lg-4'>
           <div className='p-3 d-flex flex-column align-items-center justify-content-center text-decoration-none'>
@@ -39,7 +40,7 @@ const Login = () => {
             <span className='fs-3 fw-bold'>Starter</span>
           </div>
         </div>
-        <div className='col-12 col-lg-4'>
+        <div className='col-12 col-sm-8 col-md-8 col-lg-4'>
           <div to='/proyectos/crear' className='p-3 bg-light rounded fw-bold border border-1 shadow-sm text-decoration-none'>
             <h3 className='text-center fs-2 mb-3 border-bottom py-1 '>Login</h3>
             <form onSubmit={handleSubmit(onSubmit)} encType='multipart/form-data'>
@@ -67,7 +68,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </MainContainer>
+    </HomeContainer>
   );
 };
 

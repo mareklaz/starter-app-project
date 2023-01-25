@@ -26,7 +26,7 @@ const ProjectListCard = ({ colValue, project }) => {
     <div className={colValue}>
       <div className='p-3 bg-light rounded fw-bold border border-1 shadow-sm '>
         <div className='d-flex flex-row justify-content-between border-bottom mb-3'>
-          <Link className='text-decoration-none text-dark'>
+          <Link to={`/proyectos/${project.id}`} className='text-decoration-none text-dark'>
             <h2 className='fs-4 fw-bold'>{project.name}</h2>
           </Link>
           <Link className='text-decoration-none text-dark'>

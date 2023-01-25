@@ -12,10 +12,10 @@ const ProjectsList = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchProjects = useCallback(() => {
-    getAllProjects()
+  const fetchProjectsType = useCallback(() => {
+    getProjectType('Desarrollo Web')
       .then((projectsFound) => {
-        console.log('Proyectos encontrados:', projectsFound);
+        console.log('PROYECTOS ENCONTRADOS:', projectsFound);
         setProjects(projectsFound);
         setLoading(true);
         setTimeout(() => {
@@ -28,16 +28,14 @@ const ProjectsList = () => {
   }, []);
 
   useEffect(() => {
-    fetchProjects();
-  }, [fetchProjects]);
+    fetchProjectsType();
+  }, [fetchProjectsType]);
 
-  const proyectosWeb = projects.filter((project) => project.projectType == 'Desarrollo Web');
-  console.log('Proyectos WEB', proyectosWeb);
   return (
     <MainContainer>
       <TitleHeader>
         <i className='bi bi-rocket-takeoff-fill me-2'></i>
-        Proyectos
+        Proyectos Web
       </TitleHeader>
       <ContentContainer>
         {loading ? (

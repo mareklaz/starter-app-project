@@ -5,7 +5,6 @@ import ProjectListCard from '../../components/Project/ProjectListCard';
 import TitleHeader from '../../components/TitleHeader/TitleHeader';
 import ContentContainer from '../../components/MainContainer/ContentContainer';
 import { useAuthContext } from '../../context/AuthContext';
-import UserProfileEditModal from '../../components/Modal/UserProfileEditModal';
 
 const UserProfile = () => {
   const { user } = useAuthContext();
@@ -31,10 +30,7 @@ const UserProfile = () => {
           <div className='col-12 col-lg-8'>
             <div className='p-3 bg-light rounded fw-bold border border-1 shadow-sm '>
               <div>
-                <div className='d-flex flex-column flex-lg-row align-items-center justify-content-between'>
-                  <h4 className='fw-bold text-color-secondary '>Acerca de mí</h4>
-                  <i class='bi bi-person-fill-gear fs-3' data-bs-toggle='modal' data-bs-target={`#m-${'63cfc3230579dc98c993d590'}`}></i>
-                </div>
+                <h4 className='fw-bold text-color-secondary '>Acerca de mí</h4>
                 <p>{user?.description}</p>
               </div>
               <div>
@@ -69,7 +65,6 @@ const UserProfile = () => {
             </div>
           </div>
         </div>
-        <UserProfileEditModal modalId={'63cfc3230579dc98c993d590'} />
       </ContentContainer>
     </MainContainer>
   );

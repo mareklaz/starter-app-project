@@ -10,8 +10,8 @@ const NavBar = () => {
         <img src={Logo} alt='' width={42} />
         <span className='fs-3 ms-2'>Starter</span>
       </Link>
-      <div className='d-flex align-items-center '>
-        <input className='form-control me-3 ' type='search' placeholder='Buscar...' />
+      <div className='d-flex align-items-center'>
+        <p>hola</p>
         <div className='text-dark'>
           <div className='dropdown text-end'>
             <div className='d-block link-dark text-decoration-none' data-bs-toggle='dropdown' aria-expanded='false'>

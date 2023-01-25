@@ -3,21 +3,21 @@ import React from 'react';
 const Modal = ({ modalId }) => {
   return (
     <div>
-      <div class='modal fade' id={`m-${modalId}`} tabindex='-1' aria-labelledby={modalId} aria-hidden='true'>
-        <div class='modal-dialog'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <h1 class='modal-title fs-5' id={modalId}>
+      <div className='modal fade' id={`m-${modalId}`} tabIndex='-1' aria-labelledby={modalId} aria-hidden='true'>
+        <div className='modal-dialog'>
+          <div className='modal-content'>
+            <div className='modal-header'>
+              <h1 className='modal-title fs-5' id={modalId}>
                 Modal title
               </h1>
-              <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+              <button type='button' className='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
             </div>
-            <div class='modal-body'>...</div>
-            <div class='modal-footer'>
-              <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>
+            <div className='modal-body'>...</div>
+            <div className='modal-footer'>
+              <button type='button' className='btn btn-secondary' data-bs-dismiss='modal'>
                 Close
               </button>
-              <button type='button' class='btn btn-primary'>
+              <button type='button' className='btn btn-primary'>
                 Save changes
               </button>
             </div>

@@ -30,18 +30,21 @@ const UserProfile = () => {
           </div>
           <div className='col-12 col-lg-8'>
             <div className='p-3 bg-light rounded fw-bold border border-1 shadow-sm '>
-              <div>
+              <div className='border-bottom my-3'>
                 <div className='d-flex flex-column flex-lg-row align-items-center justify-content-between'>
-                  <h4 className='fw-bold text-color-secondary '>Acerca de mí</h4>
-                  <i class='bi bi-person-fill-gear fs-3' data-bs-toggle='modal' data-bs-target={`#m-${'63cfc3230579dc98c993d590'}`}></i>
+                  <h4 className='fw-bold text-color-secondary m-0 p-0'>Acerca de mí</h4>
+                  <button className='btn btn-dark btn-sm d-flex align-items-center' data-bs-toggle='modal' data-bs-target={`#m-${'63cfc3230579dc98c993d590'}`}>
+                    Editar
+                    <i className='bi bi-person-fill-gear fs-5 ms-2'></i>
+                  </button>
                 </div>
                 <p>{user?.description}</p>
               </div>
-              <div>
+              <div className='border-bottom my-3'>
                 <h4 className='fw-bold text-color-secondary '>Perfil</h4>
                 <p>Fullstack</p>
               </div>
-              <div>
+              <div className='border-bottom my-3'>
                 <h4 className='fw-bold text-color-secondary '>Habilidades</h4>
                 <p>JavaScript</p>
                 <p>HTML</p>

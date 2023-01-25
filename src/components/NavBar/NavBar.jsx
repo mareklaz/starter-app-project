@@ -15,7 +15,7 @@ const NavBar = () => {
           <div className='dropdown text-end'>
             <div className='d-block link-dark text-decoration-none' data-bs-toggle='dropdown' aria-expanded='false'>
               {/* <i className='bi bi-person-circle fs-3 '></i> */}
-              <i class='bi bi-person-bounding-box fs-3'></i>
+              <i className='bi bi-person-bounding-box fs-3'></i>
             </div>
 
             <ul className='dropdown-menu dropdown-menu-end text-small'>

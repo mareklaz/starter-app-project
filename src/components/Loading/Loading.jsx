@@ -1,5 +1,3 @@
-import React, { Children } from 'react';
-
 const Loading = ({ children }) => {
   return (
     <div className='row'>

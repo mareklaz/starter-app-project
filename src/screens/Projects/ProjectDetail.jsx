@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import MainContainer from '../../components/MainContainer/MainContainer';
 import TitleHeader from '../../components/TitleHeader/TitleHeader';
 import ContentContainer from '../../components/MainContainer/ContentContainer';

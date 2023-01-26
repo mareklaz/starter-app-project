@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import MainContainer from '../../components/MainContainer/MainContainer';
 import Logo from '../../assets/logo.svg';
 import { useForm } from 'react-hook-form';
 
@@ -13,14 +12,10 @@ const Login = () => {
 
   const { login } = useContext(AuthContext);
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
     userLogin(data)
       .then(({ accessToken }) => {
         login(accessToken);
@@ -41,19 +36,40 @@ const Login = () => {
           </div>
         </div>
         <div className='col-12 col-sm-8 col-md-8 col-lg-4'>
-          <div to='/proyectos/crear' className='p-3 bg-light rounded fw-bold border border-1 shadow-sm text-decoration-none'>
+          <div
+            to='/proyectos/crear'
+            className='p-3 bg-light rounded fw-bold border border-1 shadow-sm text-decoration-none'
+          >
             <h3 className='text-center fs-2 mb-3 border-bottom py-1 '>Login</h3>
             <form onSubmit={handleSubmit(onSubmit)} encType='multipart/form-data'>
               <div className='form-floating mb-3'>
-                <input type='text' {...register('email', { required: true })} className='form-control' id='floatingInput' placeholder='Introduce un nombre para tu proyecto' />
+                <input
+                  type='text'
+                  {...register('email', { required: true })}
+                  className='form-control'
+                  id='floatingInput'
+                  placeholder='Introduce un nombre para tu proyecto'
+                />
                 <label htmlFor='floatingInput'>Email</label>
               </div>
               <div className='form-floating mb-3'>
-                <input type='password' {...register('password', { required: true })} className='form-control' id='floatingInput' placeholder='Introduce un nombre para tu proyecto' />
+                <input
+                  type='password'
+                  {...register('password', { required: true })}
+                  className='form-control'
+                  id='floatingInput'
+                  placeholder='Introduce un nombre para tu proyecto'
+                />
                 <label htmlFor='floatingInput'>Contraseña</label>
               </div>
               <div className='form-floating mb-3'>
-                <input type='password' {...register('password2', { required: true })} className='form-control' id='floatingInput' placeholder='Introduce un nombre para tu proyecto' />
+                <input
+                  type='password'
+                  {...register('password2', { required: true })}
+                  className='form-control'
+                  id='floatingInput'
+                  placeholder='Introduce un nombre para tu proyecto'
+                />
                 <label htmlFor='floatingInput'>Confirmar contraseña</label>
               </div>
               <div className='d-grid gap-2 border-top pt-3 mb-3'>

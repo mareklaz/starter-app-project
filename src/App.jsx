@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './screens/Home';
 import ProjectsList from './screens/Projects/ProjectList';
@@ -21,7 +20,8 @@ function App() {
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
-          }></Route>
+          }
+        ></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route
@@ -30,28 +30,32 @@ function App() {
             <ProtectedRoute>
               <ProjectsList />
             </ProtectedRoute>
-          }></Route>
+          }
+        ></Route>
         <Route
           path='/proyectos/:id'
           element={
             <ProtectedRoute>
               <ProjectDetail />
             </ProtectedRoute>
-          }></Route>
+          }
+        ></Route>
         <Route
           path='/proyectos/crear'
           element={
             <ProtectedRoute>
               <ProjectCreate />
             </ProtectedRoute>
-          }></Route>
+          }
+        ></Route>
         <Route
-          path='/usuarios/perfil'
+          path={'/perfil/:id'}
           element={
             <ProtectedRoute>
               <UserProfile />
             </ProtectedRoute>
-          }></Route>
+          }
+        ></Route>
         <Route path='/activation/:id' element={<AuthActivation />}></Route>
         <Route path='*' element={<NotFound />} />
       </Routes>

@@ -1,9 +1,11 @@
-import React from 'react';
 import Logo from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import { logout } from '../../store/AccessTokenStore';
+import { useAuthContext } from '../../context/AuthContext';
 
 const NavBar = () => {
+  const { user } = useAuthContext();
+
   return (
     <div className='p-4 my-3 bg-light rounded fw-bold border border-1 shadow-sm d-flex justify-content-between align-items-center '>
       <Link to='/' className='d-flex align-items-center text-decoration-none text-dark'>
@@ -14,8 +16,7 @@ const NavBar = () => {
         <div className='text-dark'>
           <div className='dropdown text-end'>
             <div className='d-block link-dark text-decoration-none' data-bs-toggle='dropdown' aria-expanded='false'>
-              {/* <i className='bi bi-person-circle fs-3 '></i> */}
-              <i className='bi bi-person-bounding-box fs-3'></i>
+              <i className='bi bi bi-person-circle fs-3'></i>
             </div>
 
             <ul className='dropdown-menu dropdown-menu-end text-small'>
@@ -25,7 +26,7 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <Link to='/usuarios/perfil' className='dropdown-item'>
+                <Link to={`/perfil/${user?.id}`} className='dropdown-item'>
                   Perfil
                 </Link>
               </li>
@@ -57,7 +58,8 @@ const NavBar = () => {
                   onClick={() => {
                     logout();
                   }}
-                  className='dropdown-item text-danger'>
+                  className='dropdown-item text-danger'
+                >
                   Logout
                 </Link>
               </li>

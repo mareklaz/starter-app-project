@@ -1,5 +1,3 @@
-import React from 'react';
-
 const NoDataMessage = ({ children }) => {
   return (
     <div className='row'>

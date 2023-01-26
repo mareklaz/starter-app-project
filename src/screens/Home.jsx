@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import HomeContainer from '../components/MainContainer/HomeContainer';
-import MainContainer from '../components/MainContainer/MainContainer';
 import NavBar from '../components/NavBar/NavBar';
 import { getAllProjects } from '../services/ProjectServices';
 
@@ -23,9 +22,9 @@ const Home = () => {
     fetchProjects();
   }, [fetchProjects]);
 
-  let proyectosWeb = projects?.filter((project) => project.projectType === 'Desarrollo Web');
-  let proyectosData = projects?.filter((project) => project.projectType === 'ata Analyst');
-  let proyectosUXUI = projects?.filter((project) => project.projectType === 'UX/UI');
+  const proyectosWeb = projects?.filter((project) => project.projectType === 'Desarrollo Web');
+  const proyectosData = projects?.filter((project) => project.projectType === 'Data Analyst');
+  const proyectosUXUI = projects?.filter((project) => project.projectType === 'UX/UI');
 
   return (
     <HomeContainer>
@@ -35,8 +34,13 @@ const Home = () => {
             <NavBar />
           </div>
           <div className='col-12 col-lg-7'>
-            <Link to='/proyectos' className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end text-decoration-none'>
-              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{projects ? projects.length : 0}</span>
+            <Link
+              to='/proyectos'
+              className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end text-decoration-none'
+            >
+              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>
+                {projects ? projects.length : 0}
+              </span>
               <span className='card-title'>
                 <i className='bi bi-rocket-takeoff-fill me-2'></i>
                 Proyectos
@@ -44,7 +48,10 @@ const Home = () => {
             </Link>
           </div>
           <div className='col-12 col-lg-5'>
-            <Link to='/proyectos/crear' className='p-3 card-custom bg-accent-1 rounded fw-bold border border-1 shadow-sm d-flex align-items-end text-decoration-none'>
+            <Link
+              to='/proyectos/crear'
+              className='p-3 card-custom bg-accent-1 rounded fw-bold border border-1 shadow-sm d-flex align-items-end text-decoration-none'
+            >
               <span className='card-title text-dark'>
                 <i className='bi bi-plus-square-fill me-2'></i>
                 Crea tu proyecto
@@ -69,7 +76,9 @@ const Home = () => {
           </div>
           <div className='col-12 col-lg-4'>
             <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
-              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosUXUI ? proyectosUXUI.length : 0}</span>
+              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>
+                {proyectosUXUI ? proyectosUXUI.length : 0}
+              </span>
               <span className='card-title'>
                 <i className='bi bi-palette-fill me-2'></i>
                 Proyectos UX/UI
@@ -78,7 +87,9 @@ const Home = () => {
           </div>
           <div className='col-12 col-lg-4'>
             <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
-              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosWeb ? proyectosWeb.length : 0}</span>
+              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>
+                {proyectosWeb ? proyectosWeb.length : 0}
+              </span>
 
               <span className='card-title'>
                 <i className='bi bi-code-square me-2'></i>
@@ -88,7 +99,9 @@ const Home = () => {
           </div>
           <div className='col-12 col-lg-4'>
             <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
-              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosData ? proyectosData.length : 0}</span>
+              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>
+                {proyectosData ? proyectosData.length : 0}
+              </span>
               <span className='card-title'>
                 <i className='bi bi-database-fill-gear me-2'></i>
                 Proyectos Data

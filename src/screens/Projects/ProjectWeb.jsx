@@ -1,12 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import NavBar from '../../components/NavBar/NavBar';
+import { useCallback, useEffect, useState } from 'react';
 import MainContainer from '../../components/MainContainer/MainContainer';
 import ProjectListCard from '../../components/Project/ProjectListCard';
-import { getAllProjects } from '../../services/ProjectServices';
+import { getProjectType } from '../../services/ProjectServices';
 import ContentContainer from '../../components/MainContainer/ContentContainer';
 import TitleHeader from '../../components/TitleHeader/TitleHeader';
 import Loading from '../../components/Loading/Loading';
-import NoDataMessage from '../../components/NoDataMessage/NoDataMessage';
 
 const ProjectsList = () => {
   const [projects, setProjects] = useState([]);
@@ -41,7 +39,17 @@ const ProjectsList = () => {
         {loading ? (
           <Loading>Cargando proyectos...</Loading>
         ) : (
-          <div className='row g-3'>{projects ? projects.map((project) => <ProjectListCard colValue={'col-12 col-lg-6'} key={project.id} project={project} />) : 'Hola'}</div>
+          <div className='row g-3'>
+            {projects
+              ? projects.map((project) => (
+                  <ProjectListCard
+                    colValue={'col-12 col-lg-6'}
+                    key={project.id}
+                    project={project}
+                  />
+                ))
+              : 'Hola'}
+          </div>
         )}
       </ContentContainer>
     </MainContainer>

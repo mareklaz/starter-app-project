@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import HomeContainer from '../../components/MainContainer/HomeContainer';
 import Logo from '../../assets/logo.svg';

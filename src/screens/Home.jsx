@@ -34,13 +34,8 @@ const Home = () => {
             <NavBar />
           </div>
           <div className='col-12 col-lg-7'>
-            <Link
-              to='/proyectos'
-              className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end text-decoration-none'
-            >
-              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>
-                {projects ? projects.length : 0}
-              </span>
+            <Link to='/proyectos' className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end text-decoration-none'>
+              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{projects ? projects.length : 0}</span>
               <span className='card-title'>
                 <i className='bi bi-rocket-takeoff-fill me-2'></i>
                 Proyectos
@@ -48,10 +43,7 @@ const Home = () => {
             </Link>
           </div>
           <div className='col-12 col-lg-5'>
-            <Link
-              to='/proyectos/crear'
-              className='p-3 card-custom bg-accent-1 rounded fw-bold border border-1 shadow-sm d-flex align-items-end text-decoration-none'
-            >
+            <Link to='/proyectos/crear' className='p-3 card-custom bg-accent-1 rounded fw-bold border border-1 shadow-sm d-flex align-items-end text-decoration-none'>
               <span className='card-title text-dark'>
                 <i className='bi bi-plus-square-fill me-2'></i>
                 Crea tu proyecto
@@ -76,9 +68,7 @@ const Home = () => {
           </div>
           <div className='col-12 col-lg-4'>
             <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
-              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>
-                {proyectosUXUI ? proyectosUXUI.length : 0}
-              </span>
+              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosUXUI ? proyectosUXUI.length : 0}</span>
               <span className='card-title'>
                 <i className='bi bi-palette-fill me-2'></i>
                 Proyectos UX/UI
@@ -87,9 +77,7 @@ const Home = () => {
           </div>
           <div className='col-12 col-lg-4'>
             <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
-              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>
-                {proyectosWeb ? proyectosWeb.length : 0}
-              </span>
+              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosWeb ? proyectosWeb.length : 0}</span>
 
               <span className='card-title'>
                 <i className='bi bi-code-square me-2'></i>
@@ -99,9 +87,7 @@ const Home = () => {
           </div>
           <div className='col-12 col-lg-4'>
             <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
-              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>
-                {proyectosData ? proyectosData.length : 0}
-              </span>
+              <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosData ? proyectosData.length : 0}</span>
               <span className='card-title'>
                 <i className='bi bi-database-fill-gear me-2'></i>
                 Proyectos Data

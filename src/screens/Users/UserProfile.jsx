@@ -44,17 +44,17 @@ const UserProfile = () => {
               <h3 className='my-3'>{profile?.name}</h3>
               <div className='d-flex mx-2'>
                 {profile.githubLink ? (
-                  <Link to={profile.githubLink}>
+                  <a href={profile.githubLink} target='_blank' rel='noreferrer'>
                     <i className='bi bi-github mx-2 text-dark fs-4'></i>
-                  </Link>
+                  </a>
                 ) : (
                   ''
                 )}
 
                 {profile.linkedinLink ? (
-                  <Link to={profile.linkedinLink}>
+                  <a href={profile.linkedinLink} target='_blank' rel='noreferrer'>
                     <i className='bi bi-linkedin mx-2 text-dark fs-4'></i>
-                  </Link>
+                  </a>
                 ) : (
                   ''
                 )}
@@ -66,11 +66,7 @@ const UserProfile = () => {
               <div className='border-bottom my-3'>
                 <div className='d-flex flex-column flex-lg-row align-items-center justify-content-between'>
                   <h4 className='fw-bold text-color-secondary m-0 p-0'>Acerca de mí</h4>
-                  <button
-                    className='btn btn-dark btn-sm d-flex align-items-center'
-                    data-bs-toggle='modal'
-                    data-bs-target={`#m-${id}`}
-                  >
+                  <button className='btn btn-dark btn-sm d-flex align-items-center' data-bs-toggle='modal' data-bs-target={`#m-${id}`}>
                     Editar
                     <i className='bi bi-person-fill-gear fs-5 ms-2'></i>
                   </button>
@@ -83,13 +79,14 @@ const UserProfile = () => {
               </div>
               <div className='border-bottom my-3'>
                 <h4 className='fw-bold text-color-secondary '>Habilidades</h4>
-                {/* {profile ??
-                  profile.skills.map((skill) => (
-                    <span key={skill} className='badge text-bg-dark align-self-center m-1 profil-badge '>
-                      <i className='bi bi-person-fill-dash fs-5 me-2 '></i>
-                      <span className='text-white'>{skill}</span>
-                    </span>
-                  ))} */}
+                {profile.skills
+                  ? profile.skills.map((skill) => (
+                      <span key={skill.skillId} className='badge text-bg-dark align-self-center m-1 profil-badge '>
+                        <i className='bi bi-person-fill-dash fs-5 me-2 '></i>
+                        <span className='text-white'>{skill.skillName}</span>
+                      </span>
+                    ))
+                  : ''}
               </div>
             </div>
           </div>
@@ -114,7 +111,7 @@ const UserProfile = () => {
             </div>
           </div>
         </div>
-        <UserProfileEditModal modalId={id} profile={profile} />
+        <UserProfileEditModal modalId={id} profile={profile} fetchProfile={() => fetchProfil()} />
       </ContentContainer>
     </MainContainer>
   );

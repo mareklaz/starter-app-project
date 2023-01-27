@@ -3,7 +3,17 @@
 }
 
 .card-custom {
+  border: 1px solid $color-dark;
   height: 120px;
+  // background-color: $color-primary;
+  filter: grayscale(100%) opacity(0.7);
+  transition: 600ms ease;
+
+  &:hover {
+    cursor: pointer;
+    // background-color: $color-secondary;
+    filter: grayscale(0%) opacity(1);
+  }
 }
 
 .card-title {
@@ -32,14 +42,10 @@
   background-image: url('https://images.unsplash.com/photo-1608306448197-e83633f1261c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
 }
 
-.card-project:hover {
-  color: orange;
-  background-color: rebeccapurple;
-}
-
 .social-icon {
   color: $color-light;
   &:hover {
+    cursor: pointer;
     color: $color-primary;
   }
 }

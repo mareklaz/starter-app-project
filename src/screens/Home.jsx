@@ -58,41 +58,41 @@ const Home = () => {
             </div>
           </div>
           <div className='col-12 col-lg-7'>
-            <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
+            <Link to='/colaboradores' className='p-3 card-custom bg-accent-4 rounded fw-bold border border-1 shadow-sm d-flex align-items-end text-decoration-none'>
               <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark p-1'>1</span>
               <span className='card-title'>
                 <i className='bi bi-people-fill me-2'></i>
                 Colaboradores
               </span>
-            </div>
+            </Link>
           </div>
           <div className='col-12 col-lg-4'>
-            <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
+            <Link to='/proyectos/uxui' className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end text-decoration-none'>
               <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosUXUI ? proyectosUXUI.length : 0}</span>
               <span className='card-title'>
                 <i className='bi bi-palette-fill me-2'></i>
                 Proyectos UX/UI
               </span>
-            </div>
+            </Link>
           </div>
           <div className='col-12 col-lg-4'>
-            <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
+            <Link to='/proyectos/web' className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end text-decoration-none'>
               <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosWeb ? proyectosWeb.length : 0}</span>
 
               <span className='card-title'>
                 <i className='bi bi-code-square me-2'></i>
                 Proyectos Web
               </span>
-            </div>
+            </Link>
           </div>
           <div className='col-12 col-lg-4'>
-            <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end'>
+            <Link to='/proyectos/data' className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm position-relative d-flex align-items-end text-decoration-none'>
               <span className='position-absolute bottom-0 end-0 m-2 badge bg-light text-dark fs-6 p-2 '>{proyectosData ? proyectosData.length : 0}</span>
               <span className='card-title'>
                 <i className='bi bi-database-fill-gear me-2'></i>
                 Proyectos Data
               </span>
-            </div>
+            </Link>
           </div>
           <div className='col-12 col-lg-6'>
             <div className='p-3 card-custom bg-color-dark rounded fw-bold border border-1 shadow-sm d-flex align-items-end'>

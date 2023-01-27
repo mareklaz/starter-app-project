@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
 import { updateUser } from '../../services/UserServices';
@@ -34,8 +34,16 @@ const UserProfileEditModal = ({ modalId, profile, fetchProfile }) => {
   };
 
   // Habilidades
-  const [skills, setSkills] = useState(profile.skills || []);
+  const [skills, setSkills] = useState(profile.skills);
   const [skillValue, setSkillValue] = useState('Seleccionar');
+  console.log('SKILLS', skills);
+  const test = () => {
+    setSkills(profile.skills);
+  };
+
+  useEffect(() => {
+    test();
+  }, []);
 
   const handleProfileSkill = (event) => {
     event.preventDefault();
@@ -75,11 +83,7 @@ const UserProfileEditModal = ({ modalId, profile, fetchProfile }) => {
                 <div className='row'>
                   <div className='col-6'>
                     <div className='form-floating mb-3'>
-                      <input type='text' defaultValue={profile.name} {...register('name', { required: true })} className='form-control' id='name' />
-                      <label htmlFor='name'>Nombre del usuario</label>
-                    </div>
-                    <div className='form-floating mb-3'>
-                      <textarea defaultValue={profile.description} {...register('description', { required: true })} className='form-control' id='description' />
+                      <textarea defaultValue={profile.description} {...register('description')} className='form-control' id='description' />
                       <label htmlFor='description'>Sobre ti o tu descripción</label>
                     </div>
                     <div className='form-floating mb-3 d-flex'>
@@ -108,7 +112,7 @@ const UserProfileEditModal = ({ modalId, profile, fetchProfile }) => {
                   </div>
                   <div className='col-6'>
                     <div className='form-floating mb-3 d-flex'>
-                      <select {...register('profile', { required: true })} className='form-select' id='profile' aria-label='User profile'>
+                      <select {...register('profile')} className='form-select' id='profile' aria-label='User profile'>
                         <option defaultValue='Seleccionar'>Seleccionar</option>
                         <option value='Frontend'>Frontend</option>
                         <option value='Backend'>Backend</option>
@@ -119,11 +123,11 @@ const UserProfileEditModal = ({ modalId, profile, fetchProfile }) => {
                       <label htmlFor='profile'>Elige tu perfil</label>
                     </div>
                     <div className='form-floating mb-3'>
-                      <textarea defaultValue={profile.linkedinLink} {...register('linkedinLink', { required: true })} className='form-control' id='linkedinLink' />
+                      <textarea defaultValue={profile.linkedinLink} {...register('linkedinLink')} className='form-control' id='linkedinLink' />
                       <label htmlFor='linkedinLink'>Introducte tu perfil de LinkedIn</label>
                     </div>
                     <div className='form-floating mb-3'>
-                      <textarea defaultValue={profile.githubLink} {...register('githubLink', { required: true })} className='form-control' id='githubLink' />
+                      <textarea defaultValue={profile.githubLink} {...register('githubLink')} className='form-control' id='githubLink' />
                       <label htmlFor='githubLink'>Introducte tu perfil de GitHub</label>
                     </div>
                   </div>

@@ -9,6 +9,9 @@ import AuthActivation from './screens/Auth/AuthActivation';
 import ProjectDetail from './screens/Projects/ProjectDetail';
 import ProtectedRoute from './components/ProtectedRoutes/ProtectedRoutes';
 import NotFound from './screens/NotFound/NotFound';
+import UsersList from './screens/Users/UsersList';
+import UserProfileEdit from './screens/Users/UserProfileEdit';
+import ProjectWeb from './screens/Projects/ProjectWeb';
 
 function App() {
   return (
@@ -33,6 +36,30 @@ function App() {
           }
         ></Route>
         <Route
+          path='/proyectos/web'
+          element={
+            <ProtectedRoute>
+              <ProjectWeb />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path='/proyectos/data'
+          element={
+            <ProtectedRoute>
+              <ProjectWeb />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path='/proyectos/uxui'
+          element={
+            <ProtectedRoute>
+              <ProjectWeb />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
           path='/proyectos/:id'
           element={
             <ProtectedRoute>
@@ -53,6 +80,22 @@ function App() {
           element={
             <ProtectedRoute>
               <UserProfile />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path={'/perfil/edit/:id'}
+          element={
+            <ProtectedRoute>
+              <UserProfileEdit />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path={'/colaboradores'}
+          element={
+            <ProtectedRoute>
+              <UsersList />
             </ProtectedRoute>
           }
         ></Route>

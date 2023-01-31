@@ -1,73 +1,87 @@
-import Logo from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
-import { logout } from '../../store/AccessTokenStore';
+import Logo from '../../assets/logo.svg';
 import { useAuthContext } from '../../context/AuthContext';
+import { logout } from '../../store/AccessTokenStore';
+
+const navlinks = [
+  { name: 'Starter', to: '/', style: 'nav-link link-dark px-2' },
+  { name: 'Proyectos', to: '/proyectos', style: 'nav-link link-dark px-2' },
+  { name: 'Colaboradores', to: '/starters', style: 'nav-link link-dark px-2' },
+  { name: 'Top 10', to: '/top', style: 'nav-link link-dark px-2' },
+];
 
 const NavBar = () => {
   const { user } = useAuthContext();
-
   return (
-    <div className='p-4 my-3 bg-light rounded fw-bold border border-1 shadow-sm d-flex justify-content-between align-items-center '>
-      <Link to='/' className='d-flex align-items-center text-decoration-none text-dark'>
-        <img src={Logo} alt='' width={42} />
-        <span className='fs-3 ms-2'>Starter</span>
-      </Link>
-      <div className='d-flex align-items-center'>
-        <div className='text-dark'>
-          <div className='dropdown text-end'>
-            <div className='d-block link-dark text-decoration-none' data-bs-toggle='dropdown' aria-expanded='false'>
-              <i className='bi bi bi-person-circle fs-3'></i>
+    <nav className='navbar py-3 navbar-expand-lg navbar-dark bg-light border-bottom shadow-sm'>
+      <div className='container'>
+        <Link
+          to='/'
+          className='d-flex align-items-center text-decoration-none text-dark me-3'
+        >
+          <img src={Logo} alt='' width={36} />
+        </Link>
+        <button
+          className='navbar-toggler'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#navbarSupportedContent'
+          aria-controls='navbarSupportedContent'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+        >
+          <span className='fs-1'>
+            <i className='bi bi-list text-dark'></i>
+          </span>
+        </button>
+        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul className='navbar-nav bg-light navbar-light me-auto mb-2 mb-lg-0'>
+            {navlinks.map((link) => (
+              <li className='nav-item' key={link.name}>
+                <Link className={link.style} to={link.to}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {user ? (
+            <div className='d-flex'>
+              <Link to={'/proyectos/crear'} className='btn btn-dark me-2'>
+                <i className='bi bi-plus-lg me-2'></i>
+                Proyecto
+              </Link>
+              <Link to={'/pefil'} className='btn btn-outline-color-blue me-2'>
+                Perfil
+              </Link>
+              <button
+                className='btn btn-outline-color-red me-2'
+                onClick={() => logout()}
+              >
+                Logout
+              </button>
             </div>
-
-            <ul className='dropdown-menu dropdown-menu-end text-small'>
-              <li>
-                <Link to='/' className='dropdown-item fw-bold'>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to={`/perfil/${user?.id}`} className='dropdown-item'>
-                  Perfil
-                </Link>
-              </li>
-              <li>
-                <Link to='/proyectos/crear' className='dropdown-item'>
-                  Crear proyecto
-                </Link>
-              </li>
-              <li>
-                <Link to='/proyectos' className='dropdown-item'>
-                  Proyectos
-                </Link>
-              </li>
-              <li>
-                <hr className='dropdown-divider' />
-              </li>
-              <li>
-                <Link to='/register' className='dropdown-item text-success'>
-                  Register
-                </Link>
-              </li>
-              <li>
-                <Link to='/login' className='dropdown-item text-primary'>
-                  Login
-                </Link>
-              </li>
-              <li>
-                <Link
-                  onClick={() => {
-                    logout();
-                  }}
-                  className='dropdown-item text-danger'
-                >
-                  Logout
-                </Link>
-              </li>
-            </ul>
-          </div>
+          ) : (
+            <div className='d-flex'>
+              <Link className='btn btn-outline-color-dark me-2'>
+                <i className='bi bi-plus-lg'></i>
+              </Link>
+              <Link
+                to={'/login'}
+                className='btn btn-outline-color-primary mx-1'
+              >
+                Login
+              </Link>
+              <Link
+                to={'/registro'}
+                className='btn btn-outline-color-primary mx-1'
+              >
+                Registrar
+              </Link>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

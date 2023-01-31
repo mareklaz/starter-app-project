@@ -1,108 +1,77 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './screens/Home';
-import ProjectsList from './screens/Projects/ProjectList';
-import ProjectCreate from './screens/Projects/ProjectCreate';
-import UserProfile from './screens/Users/UserProfile';
-import Register from './screens/Register/Register';
-import Login from './screens/Login/Login';
-import AuthActivation from './screens/Auth/AuthActivation';
-import ProjectDetail from './screens/Projects/ProjectDetail';
-import ProtectedRoute from './components/ProtectedRoutes/ProtectedRoutes';
-import NotFound from './screens/NotFound/NotFound';
-import UsersList from './screens/Users/UsersList';
-import UserProfileEdit from './screens/Users/UserProfileEdit';
-import ProjectWeb from './screens/Projects/ProjectWeb';
+import MainContainer from './components/Containers/MainContainer';
+import NavBar from './components/NavBar/NavBar';
+import NotFound from './screens/404/NotFound';
+import Login from './screens/Auth/Login';
+import Registro from './screens/Auth/Registro';
+import Home from './screens/Misc/Home';
+import CreateProject from './screens/Projects/CreateProject';
+import Projects from './screens/Projects/Projects';
+import Starters from './screens/Starters/Starters';
 
 function App() {
   return (
-    <>
+    <div>
+      <NavBar />
       <Routes>
         <Route
           path='/'
           element={
-            <ProtectedRoute>
+            <MainContainer>
               <Home />
-            </ProtectedRoute>
+            </MainContainer>
           }
-        ></Route>
-        <Route path='/register' element={<Register />}></Route>
-        <Route path='/login' element={<Login />}></Route>
+        />
         <Route
           path='/proyectos'
           element={
-            <ProtectedRoute>
-              <ProjectsList />
-            </ProtectedRoute>
+            <MainContainer>
+              <Projects />
+            </MainContainer>
           }
-        ></Route>
-        <Route
-          path='/proyectos/web'
-          element={
-            <ProtectedRoute>
-              <ProjectWeb />
-            </ProtectedRoute>
-          }
-        ></Route>
-        <Route
-          path='/proyectos/data'
-          element={
-            <ProtectedRoute>
-              <ProjectWeb />
-            </ProtectedRoute>
-          }
-        ></Route>
-        <Route
-          path='/proyectos/uxui'
-          element={
-            <ProtectedRoute>
-              <ProjectWeb />
-            </ProtectedRoute>
-          }
-        ></Route>
-        <Route
-          path='/proyectos/:id'
-          element={
-            <ProtectedRoute>
-              <ProjectDetail />
-            </ProtectedRoute>
-          }
-        ></Route>
+        />
         <Route
           path='/proyectos/crear'
           element={
-            <ProtectedRoute>
-              <ProjectCreate />
-            </ProtectedRoute>
+            <MainContainer>
+              <CreateProject />
+            </MainContainer>
           }
-        ></Route>
+        />
         <Route
-          path={'/perfil/:id'}
+          path='/starters'
           element={
-            <ProtectedRoute>
-              <UserProfile />
-            </ProtectedRoute>
+            <MainContainer>
+              <Starters />
+            </MainContainer>
           }
-        ></Route>
+        />
         <Route
-          path={'/perfil/edit/:id'}
+          path='*'
           element={
-            <ProtectedRoute>
-              <UserProfileEdit />
-            </ProtectedRoute>
+            <MainContainer>
+              <NotFound />
+            </MainContainer>
           }
-        ></Route>
+        />
         <Route
-          path={'/colaboradores'}
+          path='/login'
           element={
-            <ProtectedRoute>
-              <UsersList />
-            </ProtectedRoute>
+            <MainContainer>
+              <Login />
+            </MainContainer>
           }
-        ></Route>
-        <Route path='/activation/:id' element={<AuthActivation />}></Route>
-        <Route path='*' element={<NotFound />} />
+        />
+        <Route
+          path='/registro'
+          element={
+            <MainContainer>
+              <Registro />
+            </MainContainer>
+          }
+        />
       </Routes>
-    </>
+    </div>
   );
 }
 

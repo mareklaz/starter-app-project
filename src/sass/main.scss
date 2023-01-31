@@ -14,11 +14,9 @@
 
 // 5. Components
 @import 'components/button';
-@import 'components/headers';
+@import 'components/navbar';
 
 // 6. Page-specific styles
-@import 'pages/home';
-@import 'pages/projectCreate';
 
 // 7. Themes
 @import 'themes/default';

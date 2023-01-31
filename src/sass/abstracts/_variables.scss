@@ -5,29 +5,28 @@
 @import '../../../node_modules/bootstrap/scss/variables';
 @import '../../../node_modules/bootstrap/scss/mixins';
 
+$color-primary: #2a2c2f;
+$color-secondary: #70767e;
+$color-light: #dfe0e3;
+$color-dark: #1d1f25;
+$color-yellow: #f7d002;
+$color-red: #bf1a2f;
+$color-blue: #4169e1;
+$color-green: #2e8b57;
+$color-violet: #9400d3;
+
 // Create your own map
 $custom-colors: (
-  'color-primary': #282c34,
-  'color-secondary': #8992a4,
-  'color-light': #eeeff2,
-  'color-dark': #1d1f25,
-  'accent-1': #ffeb3b,
-  'accent-2': #e06c75,
-  'accent-3': #c678dd,
-  'accent-4': #98c379,
-  'accent-5': #61afef,
+  'color-primary': $color-primary,
+  'color-secondary': $color-secondary,
+  'color-light': $color-light,
+  'color-dark': $color-dark,
+  'color-yellow': $color-yellow,
+  'color-red': $color-red,
+  'color-blue': $color-blue,
+  'color-green': $color-green,
+  'color-violet': $color-violet,
 );
-
-$color-dark: #1d1f25;
-$color-primary: #282c34;
-$color-secondary: #8992a4;
-$color-light: #eeeff2;
-$color-dark: #1d1f25;
-$accent-1: #ffeb3b;
-$accent-2: #e06c75;
-$accent-3: #c678dd;
-$accent-4: #98c379;
-$accent-5: #61afef;
 
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $custom-colors);

@@ -24,10 +24,7 @@ const CreateProject = () => {
   };
 
   const addProfile = (selectValue) => {
-    setProfiles([
-      ...profiles,
-      { profileName: selectValue, profileId: uuidv4() },
-    ]);
+    setProfiles([...profiles, { profileName: selectValue, profileId: uuidv4() }]);
   };
 
   const removeProfile = (id) => {
@@ -48,7 +45,7 @@ const CreateProject = () => {
         // setTimeout(() => {
         //   setAlertMessage(false);
         // }, 1000);
-
+        setProfiles([]);
         console.log('Proyecto creado:', project);
       })
       .catch((error) => {
@@ -76,11 +73,7 @@ const CreateProject = () => {
                     className='form-control'
                   />
                   <label>Nombre proyecto</label>
-                  {errors.name?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario introducir el nombre de un proyecto.
-                    </span>
-                  )}
+                  {errors.name?.type === 'required' && <span className='text-danger small my-1'>Es necesario introducir el nombre de un proyecto.</span>}
                 </div>
                 <div className='col-12 form-floating mb-3'>
                   <textarea
@@ -88,11 +81,7 @@ const CreateProject = () => {
                     className='form-control'
                   />
                   <label>Descripción del proyecto</label>
-                  {errors.description?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario introducir un descripción del proyecto.
-                    </span>
-                  )}
+                  {errors.description?.type === 'required' && <span className='text-danger small my-1'>Es necesario introducir un descripción del proyecto.</span>}
                 </div>
 
                 <div className='col-12 col-md-6 form-floating mb-3 d-flex'>
@@ -107,11 +96,7 @@ const CreateProject = () => {
                     <option value='Finalizado'>Finalizado</option>
                   </select>
                   <label>Elige el estado del proyecto</label>
-                  {errors.status?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario introducir un descripción del proyecto.
-                    </span>
-                  )}
+                  {errors.status?.type === 'required' && <span className='text-danger small my-1'>Es necesario introducir un descripción del proyecto.</span>}
                 </div>
                 <div className='col-12 col-md-6 form-floating mb-3 d-flex'>
                   <select
@@ -132,11 +117,7 @@ const CreateProject = () => {
                     className='form-control'
                   />
                   <label>Fecha inicio del proyecto</label>
-                  {errors.startDate?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario introducir la fecha de inicio.
-                    </span>
-                  )}
+                  {errors.startDate?.type === 'required' && <span className='text-danger small my-1'>Es necesario introducir la fecha de inicio.</span>}
                 </div>
                 <div className='col-12 col-md-6 form-floating mb-3'>
                   <input
@@ -145,11 +126,7 @@ const CreateProject = () => {
                     className='form-control'
                   />
                   <label>Fecha final del proyecto</label>
-                  {errors.endDate?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario introducir la fecha de fin.
-                    </span>
-                  )}
+                  {errors.endDate?.type === 'required' && <span className='text-danger small my-1'>Es necesario introducir la fecha de fin.</span>}
                 </div>
                 <div className='form-floating mb-3'>
                   <input
@@ -161,10 +138,7 @@ const CreateProject = () => {
                 </div>
                 <div className='col-12'>
                   <h4 className=''>Colaboradores</h4>
-                  <p>
-                    Agrega los perfiles de los Starters que necesites, puedes
-                    agregar varias opciones.
-                  </p>
+                  <p>Agrega los perfiles de los Starters que necesites, puedes agregar varias opciones.</p>
                   <div className='form-floating mb-3 d-flex'>
                     <select
                       className='form-select'
@@ -191,9 +165,7 @@ const CreateProject = () => {
                   </div>
                   <div className='d-flex flex-column text-center py-3'>
                     <h5>Starters</h5>
-                    <span className='small text-secondary'>
-                      Pulsa sobre el perfil, para eliminarlo.
-                    </span>
+                    <span className='small text-secondary'>Pulsa sobre el perfil, para eliminarlo.</span>
                   </div>
                   <div className='col-12 mb-3'>
                     {profiles.map((profile) => (
@@ -204,9 +176,7 @@ const CreateProject = () => {
                         onClick={() => removeProfile(profile.profileId)}
                       >
                         <i className='bi bi-person-fill-dash fs-5 me-2 '></i>
-                        <span className='text-white'>
-                          {profile.profileName}
-                        </span>
+                        <span className='text-white'>{profile.profileName}</span>
                       </span>
                     ))}
                   </div>

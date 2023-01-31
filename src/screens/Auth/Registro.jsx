@@ -83,11 +83,7 @@ const Registro = () => {
                     id='email'
                   />
                   <label htmlFor='email'>Correo Electrónico</label>
-                  {errors.email?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario un correo electrónico válido
-                    </span>
-                  )}
+                  {errors.email?.type === 'required' && <span className='text-danger small my-1'>Es necesario un correo electrónico válido</span>}
                 </div>
                 <div className='col-12 form-floating mb-3'>
                   <input
@@ -97,11 +93,7 @@ const Registro = () => {
                     id='name'
                   />
                   <label htmlFor='name'>Usuario</label>
-                  {errors.name?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario introducir el nombre del usuario
-                    </span>
-                  )}
+                  {errors.name?.type === 'required' && <span className='text-danger small my-1'>Es necesario introducir el nombre del usuario</span>}
                 </div>
                 <div className='col-md-6 form-floating mb-3'>
                   <input
@@ -111,18 +103,8 @@ const Registro = () => {
                     id='password'
                   />
                   <label htmlFor='password'>Contraseña</label>
-                  {errors.password?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario introducir la contraseña
-                    </span>
-                  )}
-                  {checkPassword ? (
-                    <span className='text-danger small my-1'>
-                      Las contraseñas no coinciden
-                    </span>
-                  ) : (
-                    ''
-                  )}
+                  {errors.password?.type === 'required' && <span className='text-danger small my-1'>Es necesario introducir la contraseña</span>}
+                  {checkPassword ? <span className='text-danger small my-1'>Las contraseñas no coinciden</span> : ''}
                 </div>
                 <div className='col-md-6 form-floating mb-3'>
                   <input
@@ -132,18 +114,8 @@ const Registro = () => {
                     id='password2'
                   />
                   <label htmlFor='password2'>Confirmar contraseña</label>
-                  {errors.password2?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario confirmar la contraseña
-                    </span>
-                  )}
-                  {checkPassword ? (
-                    <span className='text-danger small my-1'>
-                      Las contraseñas no coinciden
-                    </span>
-                  ) : (
-                    ''
-                  )}
+                  {errors.password2?.type === 'required' && <span className='text-danger small my-1'>Es necesario confirmar la contraseña</span>}
+                  {checkPassword ? <span className='text-danger small my-1'>Las contraseñas no coinciden</span> : ''}
                 </div>
               </div>
               <div className='row g-2 mb-3 border-bottom'>
@@ -157,11 +129,7 @@ const Registro = () => {
                     id='description'
                   ></textarea>
                   <label htmlFor='description'>Sobre ti</label>
-                  {errors.description?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario escribir acerca de tí
-                    </span>
-                  )}
+                  {errors.description?.type === 'required' && <span className='text-danger small my-1'>Es necesario escribir acerca de tí</span>}
                 </div>
 
                 <div className='col-md-6 form-floating mb-3'>
@@ -195,11 +163,7 @@ const Registro = () => {
                     <option value='Data Analyst'>Data Analyst</option>
                   </select>
                   <label htmlFor='profile'>Elige tu perfil</label>
-                  {errors.profile?.type === 'required' && (
-                    <span className='text-danger small my-1'>
-                      Es necesario elegir un perfil
-                    </span>
-                  )}
+                  {errors.profile?.type === 'required' && <span className='text-danger small my-1'>Es necesario elegir un perfil</span>}
                 </div>
                 <div className='col-md-7 d-flex form-floating mb-3'>
                   <input
@@ -221,9 +185,7 @@ const Registro = () => {
                 </div>
                 <div className='col-12 d-flex flex-column text-center'>
                   <h5>Habilidades</h5>
-                  <span className='small text-secondary'>
-                    Pulsa sobre la habilidad, para eliminarla.
-                  </span>
+                  <span className='small text-secondary'>Pulsa sobre la habilidad, para eliminarla.</span>
                 </div>
                 <div className='col-12 justify-content-center'>
                   {skills?.map((skill) => (

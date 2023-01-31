@@ -1,14 +1,6 @@
 import UserAvater from './../../assets/jr-korpa-9XngoIpxcEo-unsplash.jpg';
 
-const StarterCard = ({
-  name,
-  type,
-  user,
-  description,
-  dateStart,
-  dateEnd,
-  status,
-}) => {
+const StarterCard = ({ name, profile, id }) => {
   return (
     <div className='col-6 col-lg-4'>
       <div className='border rounded bg-light shadow-sm mb-3 px-4 pt-4'>
@@ -21,8 +13,8 @@ const StarterCard = ({
             height={96}
           />
           <div className='d-flex flex-column align-items-center'>
-            <h2 className='fs-5 p-0 fw-bold mt-2'>Usuario</h2>
-            <h3 className='small p-0 fw-bold'>Frontend</h3>
+            <h2 className='fs-5 p-0 fw-bold mt-2'>{name}</h2>
+            <h3 className='small p-0 fw-bold'>{profile}</h3>
           </div>
         </div>
         <div className='d-flex justify-content-between pb-3'>

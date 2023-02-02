@@ -67,7 +67,7 @@ const NavBar = () => {
                 Proyecto
               </Link>
               <Link
-                to={'/pefil'}
+                to={'/perfil'}
                 className='btn btn-outline-color-blue me-2'
               >
                 Perfil
@@ -81,9 +81,6 @@ const NavBar = () => {
             </div>
           ) : (
             <div className='d-flex'>
-              <Link className='btn btn-outline-color-dark me-2'>
-                <i className='bi bi-plus-lg'></i>
-              </Link>
               <Link
                 to={'/login'}
                 className='btn btn-outline-color-primary mx-1'

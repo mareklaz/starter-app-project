@@ -202,7 +202,7 @@ const Registro = () => {
               </div>
               <div className='col-12 d-flex flex-row justify-content-center'>
                 <button
-                  className='btn btn-color-primary py-3 px-5 ms-3'
+                  className='btn btn-color-primary py-3 px-5'
                   type='submit'
                 >
                   Crear perfil

@@ -96,24 +96,23 @@ const ProjectCard = ({ name, id, type, projectCreator, description, startDate, e
           <div className='d-flex flex-row '>
             {collaborators
               ? collaborators.map((collaborator) => (
-                  <span
-                    key={collaborator.id}
-                    className='d-flex badge text-bg-color-yellow border border-dark shadow-sm align-items-center m-1'
-                  >
-                    <span className=''>
-                      {collaborator.collaboratorId?.name ? (
+                  <div key={collaborator.id}>
+                    {collaborator.collaboratorId?.name ? (
+                      <span className='d-flex badge text-bg-color-blue border border-dark shadow-sm align-items-center m-1'>
                         <div className='d-flex align-items-center'>
                           <i className='bi bi-person-fill-check fs-5 me-2'></i>
                           {collaborator.collaboratorId.name}
                         </div>
-                      ) : (
+                      </span>
+                    ) : (
+                      <span className='d-flex badge text-bg-color-yellow border border-dark shadow-sm align-items-center m-1 poi'>
                         <div className='d-flex align-items-center'>
                           <i className='bi bi-person-fill-up fs-5 me-2'></i>
-                          {collaborator.collaboratorProfile}
+                          {collaborator.profileName}
                         </div>
-                      )}
-                    </span>
-                  </span>
+                      </span>
+                    )}
+                  </div>
                 ))
               : ''}
           </div>

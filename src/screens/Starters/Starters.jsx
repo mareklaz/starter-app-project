@@ -10,14 +10,12 @@ const Starters = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchStarters = useCallback(() => {
+    setLoading(true);
     getAllUsers()
       .then((projectsFound) => {
         console.log('Proyectos encontrados:', projectsFound);
         setStarters(projectsFound);
-        setLoading(true);
-        setTimeout(() => {
-          setLoading(false);
-        }, 800);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error.response.data.msg);

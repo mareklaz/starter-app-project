@@ -3,7 +3,7 @@ import { getAccessToken, logout } from '../store/AccessTokenStore';
 
 const createHttp = (useAccessToken = false) => {
   const http = axios.create({
-    baseURL: process.env.BACKEND_URL || 'http://localhost:3001/api',
+    baseURL: `${import.meta.env.VITE_URL_BACKEND}/api`,
   });
 
   http.interceptors.request.use((request) => {

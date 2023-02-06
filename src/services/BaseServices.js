@@ -3,7 +3,7 @@ import { getAccessToken, logout } from '../store/AccessTokenStore';
 
 const createHttp = (useAccessToken = false) => {
   const http = axios.create({
-    baseURL: `${import.meta.env.VITE_URL_BACKEND}/api`,
+    baseURL: process.env.VITE_URL_BACKEND,
   });
 
   http.interceptors.request.use((request) => {

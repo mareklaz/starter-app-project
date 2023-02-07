@@ -3,7 +3,7 @@ import { getAccessToken, logout } from '../store/AccessTokenStore';
 
 const createHttp = (useAccessToken = false) => {
   const http = axios.create({
-    baseURL: process.env.VITE_URL_BACKEND,
+    baseURL: 'https://starter-api-project-production.up.railway.app/api',
   });
 
   http.interceptors.request.use((request) => {
